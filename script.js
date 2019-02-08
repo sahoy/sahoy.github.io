@@ -1,7 +1,7 @@
 width = document.body.clientWidth;
 height = document.body.clientHeight;
 
-var boardW = 10;
+var boardW = 50;
 var boardH = 20;
 
 var gridSpots = [];
@@ -24,4 +24,14 @@ window.onload=function(){
     document.addEventListener('mousemove',function(e){
         
 	});
+}
+
+function update(){
+	for(i = 0; i < boardW; i++){
+		for(j = 0; j < boardH; j++){
+			color = 'rgb(0,0,255)'
+			c.fillStyle
+			c.fillRect(i*width/boardW,j*height/boardHeight
+		}
+	}
 }
