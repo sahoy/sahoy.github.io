@@ -29,9 +29,9 @@ window.onload=function(){
 function update(){
 	for(i = 0; i < boardW; i++){
 		for(j = 0; j < boardH; j++){
-			color = 'rgb(0,0,255)'
-			c.fillStyle
-			c.fillRect(i*width/boardW,j*height/boardHeight
+			color = 'rgb(0,0,255)';
+			c.fillStyle=color;
+			c.fillRect(i*width/boardW,j*height/boardHeight,width/boardW,height/boardHeight);
 		}
 	}
 }
