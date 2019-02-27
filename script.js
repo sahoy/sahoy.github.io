@@ -110,6 +110,9 @@ function lowest_nonzero(arr){
 function display() {
 	c.fillStyle = 'rgb(55,55,55)';
 	c.fillRect(0, 0, width, height);
+	c.fillStyle = 'white';
+	c.font = width/18.5 + "px Pixelated"
+	c.fillText("LINES:" + lines,width/25,width/10);
 	tileW = Math.min(height / boardH, width / boardW);
 	startX = (width - tileW * boardW) / 2;
 	for (i = 0; i < boardW; i++) {
@@ -232,10 +235,6 @@ function update() {
 	}
 	deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
 	display();
-
-	c.fillStyle = 'white';
-	c.font = width/18.5 + "px Pixelated"
-	c.fillText("LINES:" + lines,width/25,width/10);
 
 	speed = 16;
 	if(fast){
