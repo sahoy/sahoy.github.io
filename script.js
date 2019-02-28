@@ -237,7 +237,7 @@ function update() {
 	deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
 	display();
 
-	if(lines%5===0){
+	if(lines%5===0 && lines!==0){
 		inital_speed*=2;
 	}
 	
