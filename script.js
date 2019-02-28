@@ -7,6 +7,7 @@ var frameNum = 0;
 var frameRate = 100;
 var gridSpots = [];
 var lines = 0;
+var initial_speed = 2;
 
 var tet1 = [[1, 1, 1, 1]];
 var tet2 = [[2, 2, 2], [2, 0, 0]];
@@ -111,7 +112,7 @@ function display() {
 	c.fillStyle = 'rgb(55,55,55)';
 	c.fillRect(0, 0, width, height);
 	c.fillStyle = 'white';
-	c.font = width/18.5 + "px Pixelated"
+	c.font = width/20 + "px Pixelated"
 	c.fillText("LINES:" + lines,width/25,width/10);
 	tileW = Math.min(height / boardH, width / boardW);
 	startX = (width - tileW * boardW) / 2;
@@ -236,7 +237,12 @@ function update() {
 	deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
 	display();
 
-	speed = 16;
+	if(lines%5===0){
+		inital_speed*=2;
+	}
+	
+	speed = initial_speed;
+	
 	if(fast){
 		speed = 5120;
 	}
