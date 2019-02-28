@@ -1,5 +1,5 @@
-width = document.body.clientWidth;
-height = document.body.clientHeight;
+width = document.documentElement.clientWidth;
+height = document.documentElement.clientHeight;
 
 var boardW = 10;
 var boardH = 20;
