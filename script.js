@@ -7,7 +7,7 @@ var frameNum = 0;
 var frameRate = 100;
 var gridSpots = [];
 var lines = 0;
-var initial_speed = 2;
+var initial_speed = 1;
 
 var tet1 = [[1, 1, 1, 1]];
 var tet2 = [[2, 2, 2], [2, 0, 0]];
