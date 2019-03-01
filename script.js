@@ -192,6 +192,9 @@ function clearLines(){
 			}
 		}
 		if(full){
+			if(lines%5==0){
+				initial_speed*=2;
+			}
 			lines+=1;
 			for(cy=gy;cy>0;cy--){
 				for(cx=0;cx<boardW;cx++){
@@ -236,10 +239,6 @@ function update() {
 	}
 	deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
 	display();
-
-	if(lines%5===0 && lines!==0){
-		inital_speed*=2;
-	}
 	
 	speed = initial_speed;
 	
