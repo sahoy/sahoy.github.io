@@ -93,7 +93,9 @@ window.onload = function () {
 						display();
             break;
 				case 40:
+		    				frameNum=0;
 						fast = true;
+		    break;
     }
 };
 }
