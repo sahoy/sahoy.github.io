@@ -236,6 +236,13 @@ function update() {
 		tetrimino[1][1]+=1;
 		if(collision(tetrimino)){
 			clearInterval(animate);
+			document.onkeyup = function(){};
+			document.onkeydown = function(){};
+			c.fillStyle = 'rgb(55,55,55)';
+			c.fillRect(0, 0, width, height);
+			c.fillStyle = 'white';
+			c.font = width/20 + "px Pixelated"
+			c.fillText("GAME OVER",width/2-20,height/2);
 			return 0;
 		}
 	}
