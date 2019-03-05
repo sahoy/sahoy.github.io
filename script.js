@@ -242,7 +242,7 @@ function update() {
 			c.fillRect(0, 0, width, height);
 			c.fillStyle = 'white';
 			c.font = width/20 + "px Pixelated"
-			c.fillText("GAME OVER",width/2-20,height/2);
+			c.fillText("GAME OVER",width/2-width*4/20+width/80,height/2);
 			return 0;
 		}
 	}
