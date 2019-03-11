@@ -208,6 +208,7 @@ function clearLines(){
 }
 
 function dropping() {
+	var flag = false;
 	outer_loop:
 	for (x = 0; x < tetrimino[0].length; x++) {
 		y=lowest_nonzero(tetrimino[0][x]);
@@ -235,7 +236,6 @@ function dropping() {
 function update() {
 	eraseTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
 
-	var flag = false;
 	if(frameNum==0){
 		dropping();
 		if(collision(tetrimino)){
