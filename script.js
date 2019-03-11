@@ -207,33 +207,37 @@ function clearLines(){
 	}
 }
 
+function dropping() {
+	outer_loop:
+	for (x = 0; x < tetrimino[0].length; x++) {
+		y=lowest_nonzero(tetrimino[0][x]);
+		if(tetrimino[0][x][y]!=0){
+			if(y+tetrimino[1][1]==boardH-1){
+					deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
+					clearLines();
+					spawnRand();
+					flag = true;
+				}
+			else if(gridSpots[tetrimino[1][0]+x][y+tetrimino[1][1]+1]!==0){
+					deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
+					clearLines();
+					spawnRand();
+					flag = true;
+				}
+		}
+		if(flag){
+			break outer_loop;
+		}
+	}
+	tetrimino[1][1]+=1;
+}
+
 function update() {
 	eraseTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
 
 	var flag = false;
 	if(frameNum==0){
-		outer_loop:
-		for (x = 0; x < tetrimino[0].length; x++) {
-			y=lowest_nonzero(tetrimino[0][x]);
-			if(tetrimino[0][x][y]!=0){
-				if(y+tetrimino[1][1]==boardH-1){
-						deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
-						clearLines();
-						spawnRand();
-						flag = true;
-					}
-				else if(gridSpots[tetrimino[1][0]+x][y+tetrimino[1][1]+1]!==0){
-						deployTet(tetrimino[0],tetrimino[1][0],tetrimino[1][1]);
-						clearLines();
-						spawnRand();
-						flag = true;
-					}
-			}
-			if(flag){
-				break outer_loop;
-			}
-		}
-		tetrimino[1][1]+=1;
+		dropping();
 		if(collision(tetrimino)){
 			clearInterval(animate);
 			document.onkeyup = function(){};
