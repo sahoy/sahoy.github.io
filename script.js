@@ -115,7 +115,7 @@ function display() {
 	c.fillRect(0, 0, width, height);
 	c.fillStyle = 'white';
 	c.font = width/20 + "px Pixelated"
-	c.fillText("LINES:" + lines,width/25,width/10);
+	c.fillText(lines,width/25,width/10);
 	tileW = Math.min(height / boardH, width / boardW);
 	startX = (width - tileW * boardW) / 2;
 	for (i = 0; i < boardW; i++) {
