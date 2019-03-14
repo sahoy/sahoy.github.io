@@ -1,7 +1,7 @@
 width = document.documentElement.clientWidth;
 height = document.documentElement.clientHeight;
 
-var boardW = 10;
+var boardW = 20;
 var boardH = 20;
 var frameNum = 0;
 var frameRate = 100;
